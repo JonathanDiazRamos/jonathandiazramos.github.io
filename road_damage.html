@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Jonathan's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">Road Damage Classification</a></h1>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li ><a href="index.html">Highlights</a></li>
+							<li><a href="about_me.html">About Me</a></li>
+							<li><a href="industry_exp.html">Industry Experience</a></li>
+							<li class="current">
+								<a href="#">AI Projects</a>
+								<ul>
+									<li><a href="greenery.html">Vegetation Segmentation</a></li>
+									<li><a href="road_damage.html">Road Damage Detection</a></li>
+									<li ><a href="garbage.html">Garbage Bag Classification</a></li>
+								</ul>
+							</li>
+							<li><a href="thesis.html">Master's Thesis</a></li>
+							<li><a href="accomplishments.html">Accomplishments</a></li>
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+								<section class="box">
+									<header>
+										<h3>Technical Tools Used</h3>
+									</header>
+									<header>
+										<h4>Language and Platform</h4>
+									</header>
+									<p>Python - Jupyter Notebook - Google Colab</p>
+									<header>
+										<h4>Libraries</h4>
+									</header>
+									<p>PyTorch - Matplotlib - Numpy </p>
+								</section>
+									<section class="box">
+										<!-- <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a> -->
+										<header>
+											<h3>Github Source Code</h3>
+										</header>
+										<p>View my program by clicking below.</p>
+										<footer>
+											<a href="https://github.com/JonathanDiazRamos/damage-road-detection" class="button alt">Source Code</a>
+										</footer>
+									</section>
+
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<a href="#" class="image featured"><img src="images/road_damage.png" alt="" style="height: 300px;"/></a>
+										<header>
+											<h2>Identifying Road Damages</h2>
+											<!-- <p>Lorem ipsum dolor sit amet feugiat</p> -->
+										</header>
+										<header>
+											<h3>Data Set and Experimental Setup</h3>
+										</header>
+										<p>The dataset used for training consists of 21,690 images and 46,962 ground truth labels. For validation, 487 images with 1,061 labels were used. The training process involved tuning two key parameters for the YOLOv7 model: Paste-in, which randomly pastes objects from one image to another, was set to a probability of 0, and Rotation, which randomly rotates images in the training set, was tuned to 10 degrees. The model was trained for 90 epochs. The dataset specifically includes various types of road damage, including transverse cracks (D10), longitudinal cracks (D00), and alligator cracks (D20), which were the focus of the detection experiment.</p>
+
+
+										<section>
+											<header>
+												<h3> Performance Evaluation</h3>
+											</header>
+											<p>The YOLOv7 model's performance was evaluated using precision and recall over the 90 epochs. The overall mean Average Precision (mAP@0.5) achieved was 0.754, indicating good performance across all damage types. Longitudinal cracks (D00) performed the best, with an mAP@0.5 of 0.8, while transverse cracks (D10) had the lowest performance at 0.698, suggesting potential areas for improvement.</p>
+											<p>The F1-Score at different confidence thresholds for all classes showed that a balance between precision and recall was best achieved at a confidence threshold of 0.433, with an F1-Score of 0.69 for all classes. This indicates good performance across different types of road damage.</p>
+										
+										</section>
+										<section>
+											<header>
+												<h3>Model Predictions and Results</h3>
+											</header>
+
+											<p>The YOLOv7 model's predictions were further analyzed through a confusion matrix, where it was observed that a high percentage (62%) of the background in Google Street View (GSV) images was mistakenly classified as longitudinal cracks (D00). The model also misclassified backgrounds as transverse (D10) and alligator cracks (D20) with errors of 32% and 6%, respectively. Despite these misclassifications, the model's overall performance remained acceptable, with correct predictions for each class at or above 75%.</p>
+    										<p>In terms of visual results, the YOLOv7 model correctly identified longitudinal (D00) and alligator cracks (D20) in GSV images. Some road damage near fences was missed in certain images, but overall, the model showed good performance, especially for larger damages visible in the GSV images.</p>
+
+										</section>
+									</article>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="col-8 col-12-medium">
+						<section>
+							
+							<ul class="social">
+								<header>
+									<h2>More Information</h2>
+								</header>
+
+								<li><a class="icon brands fa-github" href="https://github.com/JonathanDiazRamos"><span class="label">Dribbble</span></a></li>
+								<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/jonathandiazramos/"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="contact">
+								<li>
+									<h3>Full Name</h3>
+										<p>Jonathan Diaz-Ramos</p>
+								
+								</li>
+								<li>
+									<h3>Work Auth.</h3>
+										<p>U.S. Citizen</p>
+							
+								</li>
+							
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

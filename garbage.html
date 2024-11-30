@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Jonathan's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">Garbage Bag Classification</a></h1>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li ><a href="index.html">Highlights</a></li>
+							<li><a href="about_me.html">About Me</a></li>
+							<li><a href="industry_exp.html">Industry Experience</a></li>
+							<li class="current">
+								<a href="#">AI Projects</a>
+								<ul>
+									<li><a href="greenery.html">Vegetation Segmentation</a></li>
+									<li><a href="road_damage.html">Road Damage Detection</a></li>
+									<li ><a href="garbage.html">Garbage Bag Classification</a></li>
+								</ul>
+							</li>
+							<li><a href="thesis.html">Master's Thesis</a></li>
+							<li><a href="accomplishments.html">Accomplishments</a></li>
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+								<section class="box">
+									<header>
+										<h3>Technical Tools Used</h3>
+									</header>
+									<header>
+										<h4>Language and Platform</h4>
+									</header>
+									<p>Python - Jupyter Notebook - Google Colab</p>
+									<header>
+										<h4>Libraries</h4>
+									</header>
+									<p>PyTorch - TensorFlow - Matplotlib - Numpy - Keras - scikit-learn - Keras-Tuner</p>
+								</section>
+									<section class="box">
+										<!-- <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a> -->
+										<header>
+											<h3>Github Source Code</h3>
+										</header>
+										<p>View my program by clicking below.</p>
+										<footer>
+											<a href="https://github.com/JonathanDiazRamos/GarbageBagIdentification.git" class="button alt">Source Code</a>
+										</footer>
+									</section>
+
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<a href="#" class="image featured"><img src="images/garbage_page.png" alt="" style="height: 300px;"/></a>
+										<header>
+											<h2>Classifying Garbage Bags in City Streets</h2>
+											<!-- <p>Lorem ipsum dolor sit amet feugiat</p> -->
+										</header>
+										<header>
+											<h3>Data Collection and Augmentation</h3>
+										</header>
+										<p>The data for this study was gathered from Google Street View (GSV) images in urban areas across the United States, including Bronx County, New York; Skid Row, Los Angeles; and San Francisco. These images depicted single garbage bags and piles of garbage bags on city streets. A total of 270 garbage bags were initially identified. Since datasets containing such images were scarce, data augmentation techniques were implemented to expand the training set. These augmentations included Gaussian blur, horizontal flips, rotations, and distortions, which aimed to mimic different environmental conditions and perspectives.</p>
+
+										<p>The augmentations helped diversify the appearance of the garbage bags, addressing factors such as different shapes, edges, and sizes. The final training dataset consisted of 5,400 images—2,700 with garbage bags present and 2,700 without.</p>
+										
+										<section>
+											<header>
+												<h3>Model Architecture</h3>
+											</header>
+											<p>The architecture of the model used for garbage bag detection was a binary convolutional neural network (CNN). The model was designed to work with 32x32 pixel images in RGB format, which helped reduce computational demands. The network’s first layer consisted of eight filters of size (3×3) with a stride of 1, and the ReLU activation function was used to capture key features from the images. The padding was set to "same" to preserve the spatial dimensions of the input images, and a 2×2 max pooling operation followed.</p>
+
+											<p>To address overfitting, dropout layers were added, and batch normalization was implemented to stabilize training. The convolutional layers employed a reduced number of filters and strides to manage hardware limitations. The network was further simplified with two fully connected layers containing 70 and 50 nodes, respectively, and another dropout layer. The final classification layer used a single node with a sigmoid activation function to classify whether a garbage bag was present or not.</p>
+											
+										</section>
+										<section>
+											<header>
+												<h3>Experimental Results and Learning Rate Optimization</h3>
+											</header>
+											<p>Despite the implementation of data augmentation and architectural adjustments, the model's performance initially did not improve significantly. Various hyperparameters, such as the number of filters, layers, and optimizers (e.g., Stochastic Gradient Descent and Adam), were experimented with, but the most substantial improvement came from adjusting the learning rate. Initially set to a static value of 1 × 10<sup>-3</sup>, a cyclical learning rate approach was introduced, with a minimum value of 4.43 × 10<sup>-5</sup> and a maximum of 1.83 × 10<sup>-4</sup>. This adjustment helped to achieve a more stable and improved model, reducing the gap between validation and training accuracy from 15% to approximately 3%.</p>
+										</section>
+									</article>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="col-8 col-12-medium">
+						<section>
+							
+							<ul class="social">
+								<header>
+									<h2>More Information</h2>
+								</header>
+
+								<li><a class="icon brands fa-github" href="https://github.com/JonathanDiazRamos"><span class="label">Dribbble</span></a></li>
+								<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/jonathandiazramos/"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="contact">
+								<li>
+									<h3>Full Name</h3>
+										<p>Jonathan Diaz-Ramos</p>
+								
+								</li>
+								<li>
+									<h3>Work Auth.</h3>
+										<p>U.S. Citizen</p>
+							
+								</li>
+							
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

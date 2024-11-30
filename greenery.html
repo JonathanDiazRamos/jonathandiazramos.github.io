@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Jonathan's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html">Vegetation Segmentation</a></h1>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li ><a href="index.html">Highlights</a></li>
+							<li><a href="about_me.html">About Me</a></li>
+							<li><a href="industry_exp.html">Industry Experience</a></li>
+							<li class="current">
+								<a href="#">AI Projects</a>
+								<ul>
+									<li><a href="greenery.html">Vegetation Segmentation</a></li>
+									<li><a href="road_damage.html">Road Damage Detection</a></li>
+									<li ><a href="garbage.html">Garbage Bag Classification</a></li>
+								</ul>
+							</li>
+							<li><a href="thesis.html">Master's Thesis</a></li>
+							<li><a href="accomplishments.html">Accomplishments</a></li>
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+								<section class="box">
+									<header>
+										<h3>Technical Tools Used</h3>
+									</header>
+									<header>
+										<h4>Language and Platform</h4>
+									</header>
+									<p>Python - Jupyter Notebook - Google Colab</p>
+									<header>
+										<h4>Libraries</h4>
+									</header>
+									<p>OpenCV - GridSearchCV - Pickle - Skimage - Pandas - Matplotlib - Numpy - scikit-learn</p>
+								</section>
+									<section class="box">
+										<!-- <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a> -->
+										<header>
+											<h3>Github Source Code</h3>
+										</header>
+										<p>View my program by clicking below.</p>
+										<footer>
+											<a href="https://github.com/JonathanDiazRamos/vegetation-segmentation" class="button alt">Source Code</a>
+										</footer>
+									</section>
+
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<article class="box post">
+										<a href="#" class="image featured"><img src="images/greenery_seg.png" alt="" style="height: 300px;"/></a>
+										<header>
+											<h2>Using Computer Vision for Vegetation</h2>
+											<!-- <p>Lorem ipsum dolor sit amet feugiat</p> -->
+										</header>
+										<header>
+											<h3>Challenges in Detecting Greenery in Images</h3>
+										</header>
+										<p>Detecting greenery, such as bushes, grass, leaves, and shrubs, in images presents several challenges. A common misconception is that analyzing the color green is sufficient to identify vegetation. However, other elements within an image, such as painted murals, colored cars, and other highlighted objects in Google Street View (GSV) images, share this color, which complicates the task. To effectively differentiate greenery from these distractions, it was determined that texture could be used as a distinguishing feature. Vegetation has a unique texture that remains consistent across different seasons. However, not all types of vegetation share the same texture. For example, freshly cut lawns have smooth textures, whereas trees, bushes, and shrubs typically exhibit more detailed, creased textures. This variation in texture posed additional challenges that needed to be addressed in order to improve the accuracy of greenery detection.</p>
+
+										<section>
+											<header>
+												<h3>Texture Filter Bank for Greenery Detection</h3>
+											</header>
+											<p>To address the varying textures of different vegetation types, a texture filter bank was developed. The purpose of this filter bank was to include different filters specifically designed to detect the unique textures associated with greenery, whether it be smooth lawns or more detailed shrubs and trees. The Gabor filter was selected for its ability to handle these variations in texture. The Gabor filter has six tunable parameters within OpenCV, which allow it to be customized for different types of textures. The <strong>k-size</strong> parameter determines the size of the feature that needs to be recognized, while <strong>σ</strong> defines the receptive field and localization of the filter. The <strong>θ</strong> parameter specifies the orientation of the kernel window, and <strong>λ</strong> determines the wavelength of the sinusoidal component of the filter. The <strong>γ</strong> parameter controls the aspect ratio of the elliptical Gaussian envelope, and <strong>ϕ</strong> defines the phase relationship between the filter’s response and the texture pattern in the image. These parameters were optimized using a grid search approach, which allowed for the identification of the best parameter set for detecting various vegetation textures, given the constraints of the dataset.</p>
+
+										</section>
+										<section>
+											<header>
+												<h3>Post-Processing and Extensions for Improved Accuracy</h3>
+											</header>
+											<p>Once the images were filtered using the texture filter bank, a binary classifier, specifically Random Forest, was used to classify whether a pixel in the image represented greenery. However, additional post-processing steps were explored to refine the results. Two extensions, the Segment Anything Model (SAM) and Connected Component Analysis (CCA), were used to further improve the accuracy of the detection process. SAM proved to be effective in segmenting the images into precise regions. However, one limitation of SAM was that it lacked tunable parameters to specifically target greenery in images. To address this limitation, the classifier was used to help specify regions of interest. Additionally, CCA was employed to assist in removing non-greenery regions from the images. CCA focused on connected components with more pixels, which helped eliminate irrelevant areas in the image and refined the final detection. These post-processing techniques, SAM and CCA, provided valuable insights and enhanced the detection of greenery, especially considering the limited dataset available for training.</p>
+										</section>
+									</article>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="container">
+					<div class="col-8 col-12-medium">
+						<section>
+							
+							<ul class="social">
+								<header>
+									<h2>More Information</h2>
+								</header>
+
+								<li><a class="icon brands fa-github" href="https://github.com/JonathanDiazRamos"><span class="label">Dribbble</span></a></li>
+								<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/jonathandiazramos/"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="contact">
+								<li>
+									<h3>Full Name</h3>
+										<p>Jonathan Diaz-Ramos</p>
+								
+								</li>
+								<li>
+									<h3>Work Auth.</h3>
+										<p>U.S. Citizen</p>
+							
+								</li>
+							
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
